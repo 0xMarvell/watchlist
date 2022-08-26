@@ -9,8 +9,6 @@ import (
 )
 
 func main() {
-	log.Println("Hello watchlist")
-
 	r := mux.NewRouter()
 
 	routes.RegisterRoutes(r)
