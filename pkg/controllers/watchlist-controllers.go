@@ -15,8 +15,8 @@ func AddShow(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Add New Show</h1>")
 }
 
-// GetShow retrieves all shows in a user's watchlist.
-func GetShow(w http.ResponseWriter, r *http.Request) {
+// ViewWatchlist retrieves all shows in a user's watchlist.
+func ViewWatchlist(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Get All Shows</h1>")
 }
 
