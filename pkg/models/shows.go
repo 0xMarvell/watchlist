@@ -1,6 +1,6 @@
 package models
 
-// Show is the model for objects to be stored in the wathclist database.
+// Show is the database model for storing tv shows or movies.
 type Show struct {
 	Title       string `json:"name"`
 	Type        string `json:"type"`
