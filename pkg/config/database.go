@@ -1,17 +1,46 @@
 package config
 
 import (
+	"fmt"
+	"log"
+
+	"github.com/0xMarvell/watchlist/pkg/utils"
+	"github.com/spf13/viper"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-var db *gorm.DB
+var Db *gorm.DB
+
+func LoadEnv() {
+	viper.SetConfigFile(".env")
+	err := viper.ReadInConfig()
+	utils.HandleErr("error reading environment variables:", err)
+}
 
 func Connect() {
-	dsn := "host=localhost user=gorm password=gorm dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai"
-	d, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	var err error
+
+	host := viper.GetString("HOST")
+	user := viper.GetString("USER")
+	password := viper.GetString("PASSWORD")
+	dbname := viper.GetString("DB_NAME")
+	port := viper.GetString("DB_PORT")
+
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Shanghai",
+		host,
+		user,
+		password,
+		dbname,
+		port)
+
+	Db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}
-	db = d
+	log.Println("Database connection successful!")
+}
+
+func GetDB() *gorm.DB {
+	return Db
 }
