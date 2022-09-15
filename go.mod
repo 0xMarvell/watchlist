@@ -1,4 +1,4 @@
-module github.com/0xMarvell/watchlist/pkg
+module github.com/0xMarvell/watchlist
 
 go 1.18
 
