@@ -16,6 +16,7 @@ func init() {
 func main() {
 	r := gin.Default()
 	// routes.RegisterUserRoutes(r)
+	// routes.RegisterShowRoutes(r)
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
