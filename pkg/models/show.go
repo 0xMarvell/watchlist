@@ -9,4 +9,5 @@ type Show struct {
 	Category   string `json:"category"`
 	StarRating uint   `json:"star_rating"`
 	Completed  bool   `json:"completed"`
+	UserID     uint
 }
