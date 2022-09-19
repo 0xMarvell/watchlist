@@ -1,3 +1,3 @@
-# Movie and TV Show Watchlist API
+# Watchlist API
 
 work in progress ⚠️
