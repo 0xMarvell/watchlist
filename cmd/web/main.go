@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/0xMarvell/watchlist/pkg/config"
+	"github.com/0xMarvell/watchlist/pkg/routes"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,13 +16,7 @@ func init() {
 
 func main() {
 	r := gin.Default()
-	// routes.RegisterUserRoutes(r)
+	routes.RegisterUserRoutes(r)
 	// routes.RegisterShowRoutes(r)
-
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
 	log.Fatal(r.Run())
 }
