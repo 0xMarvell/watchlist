@@ -11,7 +11,7 @@ import (
 
 // Signup allows a user to register new account with the expected user details
 func Signup(c *gin.Context) {
-	// Get data off req body and bind it
+	// Get data off req body and bind to payload struct
 	var signupPayload struct {
 		Name     string `json:"name"`
 		Email    string `json:"email"`
