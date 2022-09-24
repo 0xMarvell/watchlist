@@ -10,5 +10,6 @@ func RegisterUserRoutes(r *gin.Engine) {
 	baseURl := r.Group("/api/v1")
 	{
 		baseURl.POST("/user/signup", controllers.Signup)
+		baseURl.POST("/user/login", controllers.Login)
 	}
 }
