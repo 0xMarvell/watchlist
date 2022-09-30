@@ -1,5 +1,10 @@
 package routes
 
-func RegisterShowRoutes() {
+import "github.com/gin-gonic/gin"
 
+func RegisterShowRoutes(r *gin.Engine) {
+	// baseURl := r.Group("/api/v1")
+	// {
+
+	// }
 }

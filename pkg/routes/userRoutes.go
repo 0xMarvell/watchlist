@@ -7,9 +7,9 @@ import (
 
 // RegisterUserRoutes handles all routing for user authentication
 func RegisterUserRoutes(r *gin.Engine) {
-	baseURl := r.Group("/api/v1")
+	baseURl := r.Group("/api/v1/user")
 	{
-		baseURl.POST("/user/signup", controllers.Signup)
-		baseURl.POST("/user/login", controllers.Login)
+		baseURl.POST("/signup", controllers.Signup)
+		baseURl.POST("/login", controllers.Login)
 	}
 }
