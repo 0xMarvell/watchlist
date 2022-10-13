@@ -16,7 +16,7 @@ func init() {
 
 func main() {
 	r := gin.Default()
-	routes.RegisterUserRoutes(r)
-	// routes.RegisterShowRoutes(r)
+	routes.RegisterRoutes(r)
+
 	log.Fatal(r.Run())
 }

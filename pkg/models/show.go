@@ -2,12 +2,11 @@ package models
 
 import "gorm.io/gorm"
 
-// SHow is the database models for shows= objects
+// Show is the database models for shows= objects
 type Show struct {
 	gorm.Model
-	Name       string `json:"name"`
-	Category   string `json:"category"`
-	StarRating uint   `json:"star_rating"`
-	Completed  bool   `json:"completed"`
-	UserID     uint
+	Name      string `json:"name"`
+	Category  string `json:"category"` // e.g movie, TV series, anime, etc
+	Completed bool   `json:"completed"`
+	UserID    uint
 }
